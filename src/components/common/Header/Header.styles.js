@@ -28,6 +28,7 @@ export const HeaderLogo = styled.div`
 `;
 
 export const HeaderNav = styled.nav`
+margin-left: 20px;
   display: flex;
   gap: 30px;
   a {
@@ -46,12 +47,12 @@ export const HeaderNav = styled.nav`
 export const HeaderSearch = styled.div `
     display: flex;
     justify-content: center;
-    margin: 0 75px;
+    margin: 0 80px;
 `;
 
 export const SearchBar = styled.div `
     position: relative;
-
+    margin-left: 30px;
     i {
         position: absolute;
         left: 12px;
