@@ -28,16 +28,19 @@ export const HeaderLogo = styled.div`
 `;
 
 export const HeaderNav = styled.nav`
-    display: flex;
-    gap: 30px;
-    a {
-        font-weight: bold;
-        font-size: 18px;
-        color: #222527;
-        &:hover {
-            color: #3aa1fa;
-        }
+  display: flex;
+  gap: 30px;
+  a {
+    font-weight: bold;
+    font-size: 18px;
+    color: #222527;
+    transition: color 0.2s;
+    
+    /* 고정된 상태 또는 마우스 올렸을 때 색상 */
+    &.active, &:hover {
+      color: #3aa1fa;
     }
+  }
 `;
 
 export const HeaderSearch = styled.div `
@@ -117,4 +120,69 @@ export const WriteBtn = styled.button`
     &:hover {
         background-color: #2b88d9;
     }
+`;
+
+
+export const LnbContainer = styled.div`
+  width: 100%;
+  background-color: #fff;
+  border-top: 1px solid #eaedef;
+  display: flex;
+  justify-content: center;
+  
+  /* 핵심: 높이 제어 */
+  max-height: 50px; /* LNB의 실제 높이 */
+  overflow: hidden;
+  
+    transition: all 0.1s ease-in-out;
+    transform: translateY(0);
+
+  &.hide {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+  }
+`;
+
+export const LnbContent = styled.nav`
+  width: 100%;
+  max-width: 1136px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    width: auto;
+  }
+
+  a {
+    font-size: 15px;
+    font-weight: 700;
+    color: #2f3438;
+    white-space: nowrap;
+    position: relative;
+    padding: 10px 0;
+    
+    &.active, &:hover {
+      color: #3aa1fa;
+    }
+
+    &.active::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #3aa1fa;
+    }
+  }
 `;
